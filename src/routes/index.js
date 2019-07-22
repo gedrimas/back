@@ -1,9 +1,9 @@
-import session from './session'
-import users from './users'
-import messages from './messages'
+import session from './session';
+import user from './user';
+import message from './message';
 
 export default {
   session,
-  users,
-  messages,
-}
+  user,
+  message,
+};
