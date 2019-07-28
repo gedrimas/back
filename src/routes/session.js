@@ -1,9 +1,13 @@
-import Router from 'express'
 
-const router = Router()
+import { Router } from 'express';
 
-router.get('/', (req, res) => {
-  return res.send(req.context.module.user[req.context.me.id])
-})
+const router = Router();
 
-export default router
+router.get('/', async (req, res) => {
+  const user = await req.context.models.User.findById(
+    req.context.me.id,
+  );
+  return res.send(user);
+});
+
+export default router;
